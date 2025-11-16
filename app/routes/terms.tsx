@@ -53,6 +53,65 @@ export default createRoute((c) => {
       <p>
         本規約は日本法に準拠し、日本の裁判所を第一審の専属的合意管轄裁判所とします。
       </p>
+
+      <hr />
+
+      <div class='pill'>Terms of Service /en</div>
+      <h1>Using Clear Wallet — Polygon Self-Custody Wallet</h1>
+      <p>
+        These Terms set forth the conditions for using Clear Wallet ("the Service") and define the rights and obligations
+        between users and the operator ("we"). Please review them before using features such as AI summaries and gas fee
+        payments via JPYC/USDC.
+      </p>
+
+      <h2>Article 1 (Scope)</h2>
+      <p>
+        These Terms apply to all relationships between users and us regarding the Service. By using the Service, users are
+        deemed to have agreed to these Terms.
+      </p>
+
+      <h2>Article 2 (Self-Custody and Responsibility)</h2>
+      <ul>
+        <li>The Service is self-custodial; users manage their own private keys and recovery phrases.</li>
+        <li>We are not liable for loss, leakage, or misuse of private keys.</li>
+        <li>Users make the final decisions when operating the wallet or approving transactions.</li>
+      </ul>
+
+      <h2>Article 3 (Using the Features)</h2>
+      <ul>
+        <li>We provide transfers, NFT display, WalletConnect, AI summaries of transactions, and gas payments in JPYC/USDC.</li>
+        <li>AI summaries are assistive only and accuracy is not guaranteed; always review the original details.</li>
+        <li>Gas conversion rates vary with network conditions and may include fees or spreads.</li>
+      </ul>
+
+      <h2>Article 4 (Prohibited Actions)</h2>
+      <ul>
+        <li>Violations of laws or regulations, or acts against public order and morals.</li>
+        <li>Impersonation, unauthorized system access, or reverse engineering.</li>
+        <li>Use for illicit purposes such as money laundering or terrorist financing.</li>
+      </ul>
+
+      <h2>Article 5 (Disclaimers)</h2>
+      <ul>
+        <li>
+          We are not responsible for damages arising from blockchain specification changes, network congestion, or outages of
+          external services.
+        </li>
+        <li>The same applies to damages caused by device failures, insufficient security settings, or malicious software.</li>
+        <li>Except where required by law, we do not intervene in disputes between users.</li>
+      </ul>
+
+      <h2>Article 6 (Changes or Suspension)</h2>
+      <p>
+        We may modify, suspend, or terminate all or part of the Service due to network conditions, legal changes, or
+        maintenance. Important changes will be announced in advance in the app or on the official site.
+      </p>
+
+      <h2>Article 7 (Governing Law and Jurisdiction)</h2>
+      <p>
+        These Terms are governed by the laws of Japan, and Japanese courts shall have exclusive jurisdiction as the court of
+        first instance.
+      </p>
     </section>,
     { title: 'Clear Wallet 利用規約', description: 'JPYCでガス代を支払えるPolygon専用セルフカストディウォレットの利用条件。' }
   )
