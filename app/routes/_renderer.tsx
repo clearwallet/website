@@ -48,15 +48,18 @@ const baseStyles = `
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 10px;
-    border-radius: 12px;
+    padding: 8px 12px 8px 10px;
+    border-radius: 14px;
     background: #ffffff;
     border: 1px solid var(--border);
     box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
   }
-  nav .brand span[aria-hidden='true'] {
-    font-size: 18px;
-    filter: drop-shadow(0 6px 12px rgba(124, 58, 237, 0.35));
+  nav .brand img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(79, 70, 229, 0.12);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
   }
   nav ul {
     list-style: none;
@@ -126,6 +129,33 @@ const baseStyles = `
     box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
     overflow: hidden;
     position: relative;
+  }
+  .brand-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px 10px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(6px);
+    width: fit-content;
+  }
+  .brand-card img {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid rgba(79, 70, 229, 0.14);
+    background: #a3e4d6;
+  }
+  .brand-card .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #312e81;
+    margin: 0 0 4px;
+    font-weight: 800;
   }
   .hero::after {
     content: '';
@@ -214,8 +244,10 @@ const baseStyles = `
 `
 
 export default jsxRenderer(({ children, title, description }) => {
-  const pageTitle = title ? `${title} | Honox App` : 'Honox App'
-  const metaDescription = description ?? 'Minimal multi-page site built with HonoX.'
+  const siteName = 'Clear Wallet'
+  const pageTitle = title ? `${title} | ${siteName}` : siteName
+  const metaDescription =
+    description ?? 'Clear Wallet は JPYC でガス代を支払える Polygon 専用セルフカストディウォレットです。'
 
   return (
     <html lang='ja'>
@@ -230,8 +262,8 @@ export default jsxRenderer(({ children, title, description }) => {
         <header>
           <nav>
             <div class='brand'>
-              <span aria-hidden='true'>✨</span>
-              <span>Honox App</span>
+              <img src={withBasePath('/assets/clear-wallet-logo.svg')} alt='Clear Wallet ロゴ' />
+              <span>Clear Wallet</span>
             </div>
             <ul>
               <li>
@@ -248,7 +280,7 @@ export default jsxRenderer(({ children, title, description }) => {
         </header>
         <main>{children}</main>
         <footer>
-          <small>© {new Date().getFullYear()} Honox App</small>
+          <small>© {new Date().getFullYear()} Clear Wallet</small>
         </footer>
       </body>
     </html>

@@ -1,0 +1,8 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Clear Wallet ロゴ</title>
+  <desc id="desc">ミント色の背景に白い C と 2 つの点をあしらったロゴ</desc>
+  <rect width="512" height="512" rx="128" fill="#8AD5C7" />
+  <path d="M364 344.5C341.5 364.6 309.6 376 272.5 376C186.9 376 136 321.9 136 256C136 190.1 186.9 136 272.5 136C307.2 136 335.9 146 358 163L334.5 194C318.3 182.4 299.9 175.5 277.5 175.5C223.2 175.5 185 212.6 185 256C185 299.4 223.2 336.5 277.5 336.5C301 336.5 320.7 329.5 337 317.1L364 344.5Z" fill="white" />
+  <circle cx="300" cy="124" r="18" fill="white" />
+  <circle cx="332" cy="118" r="12" fill="white" />
+</svg>
