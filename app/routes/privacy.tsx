@@ -1,5 +1,7 @@
 import { createRoute } from 'honox/factory'
 
+import { withBasePath } from '../utils/path'
+
 export default createRoute((c) => {
   return c.render(
     <section class='surface'>
@@ -116,6 +118,15 @@ export default createRoute((c) => {
     {
       title: 'Clear Wallet プライバシーポリシー',
       description: 'JPYCでガス代を支払えるPolygon向けセルフカストディウォレットにおけるデータの扱いと安全管理方針。',
+      canonical: c.req.path,
+      keywords: ['Clear Wallet', 'プライバシーポリシー', 'データ保護', 'Polygon', 'セルフカストディ'],
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@type': 'PrivacyPolicy',
+        name: 'Clear Wallet プライバシーポリシー',
+        description: 'JPYCでガス代を支払えるPolygon向けセルフカストディウォレットにおけるデータの扱いと安全管理方針。',
+        url: withBasePath(c.req.path),
+      },
     }
   )
 })

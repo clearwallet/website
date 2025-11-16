@@ -62,6 +62,38 @@ export default createRoute((c) => {
       title: 'Clear Wallet | Polygon初心者向けセルフカストディウォレット',
       description:
         'JPYCでガス代を支払えるPolygon特化ウォレット。送金・NFT表示・WalletConnect・AI要約を備え、初心者でも安心して使えます。',
+      canonical: c.req.path,
+      keywords: [
+        'Clear Wallet',
+        'JPYC',
+        'USDC',
+        'Polygon ウォレット',
+        'セルフカストディ',
+        '暗号資産初心者',
+        'ガス代',
+        'WalletConnect',
+        'NFT 管理',
+      ],
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Clear Wallet',
+        description:
+          'JPYCでガス代を支払えるPolygon特化ウォレット。送金・NFT表示・WalletConnect・AI要約を備え、初心者でも安心して使えます。',
+        applicationCategory: 'FinanceApplication',
+        operatingSystem: 'Web',
+        url: withBasePath(c.req.path),
+        brand: {
+          '@type': 'Brand',
+          name: 'Clear Wallet',
+          logo: withBasePath('/assets/clear-wallet-logo.svg'),
+        },
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'JPY',
+        },
+      },
     }
   )
 })

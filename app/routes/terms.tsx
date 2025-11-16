@@ -1,5 +1,7 @@
 import { createRoute } from 'honox/factory'
 
+import { withBasePath } from '../utils/path'
+
 export default createRoute((c) => {
   return c.render(
     <section class='surface'>
@@ -113,6 +115,18 @@ export default createRoute((c) => {
         first instance.
       </p>
     </section>,
-    { title: 'Clear Wallet 利用規約', description: 'JPYCでガス代を支払えるPolygon専用セルフカストディウォレットの利用条件。' }
+    {
+      title: 'Clear Wallet 利用規約',
+      description: 'JPYCでガス代を支払えるPolygon専用セルフカストディウォレットの利用条件。',
+      canonical: c.req.path,
+      keywords: ['Clear Wallet', '利用規約', 'Polygon', 'JPYC', 'USDC', 'セルフカストディ'],
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Clear Wallet 利用規約',
+        description: 'JPYCでガス代を支払えるPolygon専用セルフカストディウォレットの利用条件。',
+        url: withBasePath(c.req.path),
+      },
+    }
   )
 })

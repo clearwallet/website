@@ -273,56 +273,96 @@ const baseStyles = `
   }
 `
 
-export default jsxRenderer(({ children, title, description }) => {
-  const siteName = 'Clear Wallet'
-  const pageTitle = title ? `${title} | ${siteName}` : siteName
-  const metaDescription =
-    description ?? 'Clear Wallet は JPYC でガス代を支払える Polygon 専用セルフカストディウォレットです。'
+const siteOrigin = (import.meta.env.PUBLIC_SITE_URL as string | undefined)?.replace(/\/$/, '') ?? ''
 
-  return (
-    <html lang='ja'>
-      <head>
-        <meta charSet='UTF-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <meta
-          name='google-site-verification'
-          content='Jbq4LxESvET84V0kxiojK63ux1rqNW_IZ7xaoxfZJOo'
-        />
-        {/* Google tag (gtag.js) */}
-        <script async src='https://www.googletagmanager.com/gtag/js?id=G-28PJ0KY0LB'></script>
-        <script>
-          {`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+export default jsxRenderer(
+  ({ children, title, description, canonical, keywords, ogImage, noindex, structuredData }) => {
+    const siteName = 'Clear Wallet'
+    const pageTitle = title ? `${title} | ${siteName}` : siteName
+    const metaDescription =
+      description ?? 'Clear Wallet は JPYC でガス代を支払える Polygon 専用セルフカストディウォレットです。'
+
+    const normalizedPath = canonical ?? '/'
+    const pathWithLeadingSlash = normalizedPath.startsWith('/') ? normalizedPath : `/${normalizedPath}`
+    const canonicalUrl = siteOrigin ? `${siteOrigin}${pathWithLeadingSlash}` : withBasePath(pathWithLeadingSlash)
+
+    const ogImageUrl = ogImage
+      ? ogImage.startsWith('http')
+        ? ogImage
+        : withBasePath(ogImage)
+      : withBasePath('/assets/clear-wallet-logo.svg')
+
+    const keywordsContent = Array.isArray(keywords) ? keywords.join(', ') : keywords
+    const structuredDataArray = structuredData
+      ? Array.isArray(structuredData)
+        ? structuredData
+        : [structuredData]
+      : []
+
+    return (
+      <html lang='ja'>
+        <head>
+          <meta charSet='UTF-8' />
+          <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+          <meta
+            name='google-site-verification'
+            content='Jbq4LxESvET84V0kxiojK63ux1rqNW_IZ7xaoxfZJOo'
+          />
+          {/* Google tag (gtag.js) */}
+          <script async src='https://www.googletagmanager.com/gtag/js?id=G-28PJ0KY0LB'></script>
+          <script>
+            {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);} 
             gtag('js', new Date());
 
             gtag('config', 'G-28PJ0KY0LB');`}
-        </script>
-        <title>{pageTitle}</title>
-        <meta name='description' content={metaDescription} />
-        <style dangerouslySetInnerHTML={{ __html: baseStyles }} />
-      </head>
-      <body>
-        <header>
-          <nav>
-            <a class='brand' href={withBasePath('/')}>
-              <img src={withBasePath('/assets/clear-wallet-logo.svg')} alt='Clear Wallet ロゴ' />
-              <span>Clear Wallet</span>
-            </a>
-            <ul>
-              <li>
-                <a href={withBasePath('/terms')}>利用規約</a>
-              </li>
-              <li>
-                <a href={withBasePath('/privacy')}>プライバシーポリシー</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>{children}</main>
-        <footer>
-          <small>© {new Date().getFullYear()} Clear Wallet</small>
-        </footer>
-      </body>
-    </html>
-  )
-})
+          </script>
+          <title>{pageTitle}</title>
+          <meta name='description' content={metaDescription} />
+          <meta name='keywords' content={keywordsContent} />
+          <meta name='robots' content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+          <link rel='canonical' href={canonicalUrl} />
+          <meta property='og:type' content='website' />
+          <meta property='og:site_name' content={siteName} />
+          <meta property='og:title' content={pageTitle} />
+          <meta property='og:description' content={metaDescription} />
+          <meta property='og:url' content={canonicalUrl} />
+          <meta property='og:locale' content='ja_JP' />
+          <meta property='og:image' content={ogImageUrl} />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:title' content={pageTitle} />
+          <meta name='twitter:description' content={metaDescription} />
+          <meta name='twitter:image' content={ogImageUrl} />
+          <style dangerouslySetInnerHTML={{ __html: baseStyles }} />
+          {structuredDataArray.map((data, index) => (
+            <script key={index} type='application/ld+json'>
+              {JSON.stringify(data)}
+            </script>
+          ))}
+        </head>
+        <body>
+          <header>
+            <nav>
+              <a class='brand' href={withBasePath('/')}>
+                <img src={withBasePath('/assets/clear-wallet-logo.svg')} alt='Clear Wallet ロゴ' />
+                <span>Clear Wallet</span>
+              </a>
+              <ul>
+                <li>
+                  <a href={withBasePath('/terms')}>利用規約</a>
+                </li>
+                <li>
+                  <a href={withBasePath('/privacy')}>プライバシーポリシー</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <main>{children}</main>
+          <footer>
+            <small>© {new Date().getFullYear()} Clear Wallet</small>
+          </footer>
+        </body>
+      </html>
+    )
+  }
+)
