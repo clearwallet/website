@@ -164,10 +164,9 @@ const baseStyles = `
     gap: 12px;
     padding: 10px 14px 10px 10px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.82);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
     box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
-    backdrop-filter: blur(6px);
     width: fit-content;
   }
   .brand-card img {

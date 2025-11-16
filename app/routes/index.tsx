@@ -9,15 +9,15 @@ export default createRoute((c) => {
         <div class='brand-card'>
           <img src={withBasePath('/assets/clear-wallet-logo.svg')} alt='Clear Wallet ロゴ' />
           <div>
-            <p class='eyebrow'>Polygon Beginners Welcome</p>
-            <p class='muted'>日本円ステーブルでガス代が払える、透明なセルフカストディ体験。</p>
+            <p class='eyebrow'>Crypto Beginners Welcome</p>
+            <p class='muted'>ステーブルコインでガス代が払える、やさしいセルフカストディ体験。</p>
           </div>
         </div>
-        <div class='pill'>Polygon 専用セルフカストディ</div>
+        <div class='pill'>暗号資産初心者のためのセルフカストディウォレット</div>
         <h1>Clear Wallet — JPYC でガス代を払える、初心者のための透明なウォレット</h1>
         <p class='lead'>
-          送金・NFT表示・WalletConnect に加え、トランザクションを AI がやさしく要約。日本円ステーブル（JPYC）で
-          ガス代を支払えるから、暗号資産が初めてでも安心して Polygon を使い始められます。
+          送金・NFT表示・WalletConnect に加え、トランザクションを AI がやさしく要約。ステーブルコイン（JPYC や
+          USDC）でガス代を支払えるから、暗号資産が初めてでも安心して暗号資産を始められます。
         </p>
         <div class='actions'>
           <a class='button' href={withBasePath('/terms')}>利用規約</a>
@@ -26,7 +26,7 @@ export default createRoute((c) => {
         <dl class='grid' aria-label='Clear Wallet のポイント'>
           <div class='stat'>
             <dt>JPYC / USDC でガス代</dt>
-            <dd>日本円ステーブルや USDC から手数料を自動換算して支払い。</dd>
+            <dd>ステーブルコイン（JPYC や USDC）から手数料を自動換算して支払い。</dd>
           </div>
           <div class='stat'>
             <dt>AI 要約</dt>
@@ -34,7 +34,7 @@ export default createRoute((c) => {
           </div>
           <div class='stat'>
             <dt>はじめてでも安心</dt>
-            <dd>セルフカストディ運用をステップごとにガイド。</dd>
+            <dd>初心者向けコンテンツが充実しており、ステップごとにサポート。</dd>
           </div>
         </dl>
       </section>
@@ -50,8 +50,11 @@ export default createRoute((c) => {
           <li>セルフカストディ設計で秘密鍵は端末内に保管。復元フレーズ管理もガイドします。</li>
         </ul>
         <p class='muted'>
-          日本市場に合わせて、ガス代を日本円ステーブルで払える分かりやすさと、透明性の高い情報提示を重視しています。
+          日本市場に合わせて、ガス代をステーブルコイン（JPYC や USDC）で払える分かりやすさと、透明性の高い情報提示を重視しています。
           詳細な利用条件やデータの扱いについては、以下のポリシーをご確認ください。
+        </p>
+        <p>
+          <a href={withBasePath('/terms')}>利用規約</a> / <a href={withBasePath('/privacy')}>プライバシーポリシー</a>
         </p>
       </section>
     </>,
