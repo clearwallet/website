@@ -41,7 +41,11 @@ const baseStyles = `
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+  }
+  nav a.brand {
+    color: inherit;
+    text-decoration: none;
   }
   nav .brand {
     font-weight: 800;
@@ -66,10 +70,15 @@ const baseStyles = `
   nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 12px;
     margin: 0;
     padding: 0;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+  }
+  nav li {
+    display: flex;
+    align-items: center;
   }
   nav a {
     text-decoration: none;
@@ -78,6 +87,8 @@ const baseStyles = `
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     color: #0f172a;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
   }
   nav a:hover, nav a:focus-visible {
     background: #e8ecf5;
@@ -90,8 +101,6 @@ const baseStyles = `
     }
     nav ul {
       gap: 8px;
-      overflow-x: auto;
-      scrollbar-width: thin;
     }
     nav a {
       padding: 8px 12px;
@@ -280,14 +289,11 @@ export default jsxRenderer(({ children, title, description }) => {
       <body>
         <header>
           <nav>
-            <div class='brand'>
+            <a class='brand' href={withBasePath('/')}>
               <img src={withBasePath('/assets/clear-wallet-logo.svg')} alt='Clear Wallet ロゴ' />
               <span>Clear Wallet</span>
-            </div>
+            </a>
             <ul>
-              <li>
-                <a href={withBasePath('/')}>トップ</a>
-              </li>
               <li>
                 <a href={withBasePath('/terms')}>利用規約</a>
               </li>
