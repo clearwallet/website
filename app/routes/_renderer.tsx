@@ -79,16 +79,18 @@ const baseStyles = `
   nav li {
     display: flex;
     align-items: center;
+    height: 100%;
   }
   nav a {
     text-decoration: none;
-    padding: 9px 14px;
+    padding: 10px 14px;
     border-radius: 12px;
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     color: #0f172a;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
+    height: 100%;
   }
   nav a:hover, nav a:focus-visible {
     background: #e8ecf5;
@@ -157,6 +159,7 @@ const baseStyles = `
     box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
     overflow: hidden;
     position: relative;
+    z-index: 0;
   }
   .brand-card {
     display: inline-flex;
@@ -173,8 +176,9 @@ const baseStyles = `
     width: 44px;
     height: 44px;
     border-radius: 14px;
-    border: 1px solid rgba(79, 70, 229, 0.14);
-    background: #a3e4d6;
+    border: none;
+    background: transparent;
+    box-shadow: none;
   }
   .brand-card .eyebrow {
     font-size: 12px;
@@ -191,6 +195,11 @@ const baseStyles = `
     border-radius: 16px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
     pointer-events: none;
+    z-index: 0;
+  }
+  .hero > * {
+    position: relative;
+    z-index: 1;
   }
   .hero h1 {
     margin: 0;
