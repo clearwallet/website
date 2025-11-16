@@ -1,5 +1,7 @@
 import { createRoute } from 'honox/factory'
 
+import { withBasePath } from '../utils/path'
+
 export default createRoute((c) => {
   return c.render(
     <>
@@ -11,8 +13,8 @@ export default createRoute((c) => {
           <code>docs</code> へ出力します。装飾や文言を入れ替えるだけで、すぐに公開できるベースを用意しました。
         </p>
         <div class='actions'>
-          <a class='button' href='/terms'>利用規約をみる</a>
-          <a class='button secondary' href='/privacy'>プライバシーを確認</a>
+          <a class='button' href={withBasePath('/terms')}>利用規約をみる</a>
+          <a class='button secondary' href={withBasePath('/privacy')}>プライバシーを確認</a>
         </div>
         <dl class='grid' aria-label='サイト概要'>
           <div class='stat'>

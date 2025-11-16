@@ -1,5 +1,7 @@
 import type { NotFoundHandler } from 'hono'
 
+import { withBasePath } from '../utils/path'
+
 const handler: NotFoundHandler = (c) => {
   return c.render(
     <div class='card'>
@@ -9,7 +11,7 @@ const handler: NotFoundHandler = (c) => {
         お探しのページは移動または削除された可能性があります。トップページから再度お試しください。
       </p>
       <p>
-        <a href='/'>トップへ戻る</a>
+        <a href={withBasePath('/')}>トップへ戻る</a>
       </p>
     </div>,
     { title: 'ページが見つかりません' }

@@ -1,5 +1,7 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
 
+import { withBasePath } from '../utils/path'
+
 const baseStyles = `
   :root {
     color-scheme: light;
@@ -233,13 +235,13 @@ export default jsxRenderer(({ children, title, description }) => {
             </div>
             <ul>
               <li>
-                <a href='/'>トップ</a>
+                <a href={withBasePath('/')}>トップ</a>
               </li>
               <li>
-                <a href='/terms'>利用規約</a>
+                <a href={withBasePath('/terms')}>利用規約</a>
               </li>
               <li>
-                <a href='/privacy'>プライバシーポリシー</a>
+                <a href={withBasePath('/privacy')}>プライバシーポリシー</a>
               </li>
             </ul>
           </nav>
