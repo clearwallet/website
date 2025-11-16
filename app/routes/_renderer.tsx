@@ -70,10 +70,15 @@ const baseStyles = `
   nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 12px;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+  }
+  nav li {
+    display: flex;
+    align-items: center;
   }
   nav a {
     text-decoration: none;
@@ -82,6 +87,8 @@ const baseStyles = `
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     color: #0f172a;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
   }
   nav a:hover, nav a:focus-visible {
     background: #e8ecf5;
