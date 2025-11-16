@@ -1,0 +1,19 @@
+import type { NotFoundHandler } from 'hono'
+
+const handler: NotFoundHandler = (c) => {
+  return c.render(
+    <div class='card'>
+      <div class='badge'>404</div>
+      <h1>ページが見つかりません</h1>
+      <p>
+        お探しのページは移動または削除された可能性があります。トップページから再度お試しください。
+      </p>
+      <p>
+        <a href='/'>トップへ戻る</a>
+      </p>
+    </div>,
+    { title: 'ページが見つかりません' }
+  )
+}
+
+export default handler
