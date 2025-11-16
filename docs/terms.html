@@ -74,19 +74,22 @@
   }
   nav li {
     display: flex;
-    align-items: center;
-    height: 100%;
+    align-items: stretch;
+  }
+  nav li + li {
+    margin-top: 0;
   }
   nav a {
     text-decoration: none;
-    padding: 10px 14px;
+    padding: 0 14px;
+    min-height: 44px;
     border-radius: 12px;
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     color: #0f172a;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    height: 100%;
+    line-height: 1.1;
   }
   nav a:hover, nav a:focus-visible {
     background: #e8ecf5;
@@ -183,15 +186,6 @@
     color: #312e81;
     margin: 0 0 4px;
     font-weight: 800;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    inset: 6px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
-    pointer-events: none;
-    z-index: 0;
   }
   .hero > * {
     position: relative;
