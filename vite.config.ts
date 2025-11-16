@@ -6,6 +6,7 @@ const entry = './app/server.ts'
 
 export default defineConfig(() => {
   return {
+    base: '/website/',
     build: {
       outDir: 'docs',
       emptyOutDir: true,
