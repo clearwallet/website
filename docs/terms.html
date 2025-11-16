@@ -37,6 +37,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+    flex-wrap: nowrap;
   }
   nav .brand {
     font-weight: 800;
@@ -49,6 +50,7 @@
     background: #ffffff;
     border: 1px solid var(--border);
     box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+    flex-shrink: 0;
   }
   nav .brand img {
     width: 32px;
@@ -63,6 +65,7 @@
     gap: 12px;
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap;
   }
   nav a {
     text-decoration: none;
@@ -70,10 +73,26 @@
     border-radius: 12px;
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     color: #0f172a;
+    white-space: nowrap;
   }
   nav a:hover, nav a:focus-visible {
     background: #e8ecf5;
     box-shadow: inset 0 0 0 1px var(--border);
+  }
+  @media (max-width: 640px) {
+    nav {
+      padding: 12px 16px;
+      gap: 8px;
+    }
+    nav ul {
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    nav a {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
   }
   main {
     max-width: 1040px;
@@ -237,4 +256,4 @@
     padding: 36px 24px 44px;
     color: #667085;
   }
-</style></head><body><header><nav><div class="brand"><img src="/website/assets/clear-wallet-logo.svg" alt="Clear Wallet ロゴ"/><span>Clear Wallet</span></div><ul><li><a href="/website/">トップ</a></li><li><a href="/website/terms">利用規約</a></li><li><a href="/website/privacy">プライバシーポリシー</a></li></ul></nav></header><main><section class="surface"><div class="pill">Clear Wallet 利用規約</div><h1>Polygon 専用セルフカストディウォレットのご利用にあたって</h1><p>本規約は、Clear Wallet（以下「本サービス」）の提供条件および当社と利用者の権利義務関係を定めるものです。 JPYC/USDC によるガス代支払い機能や AI 要約など、本サービス特有の機能をご利用いただく前に必ずお読みください。</p><h2>第1条（適用）</h2><p>本規約は、本サービスの利用に関する当社と利用者との間の一切の関係に適用されます。利用者は本規約に同意した上で本サービスを利用するものとします。</p><h2>第2条（セルフカストディと自己責任）</h2><ul><li>本サービスはセルフカストディ型であり、秘密鍵・復元フレーズは利用者が管理します。</li><li>秘密鍵の紛失・漏洩・第三者による不正利用について、当社は責任を負いません。</li><li>ウォレット操作やトランザクション承認の最終判断は利用者自身が行うものとします。</li></ul><h2>第3条（機能の利用）</h2><ul><li>送金、NFT 表示、WalletConnect、トランザクション AI 要約、ガス代の JPYC/USDC 支払いを提供します。</li><li>AI 要約は補助情報であり、正確性を保証するものではありません。必ず原文を確認してください。</li><li>ガス代の換算レートはネットワーク状況により変動し、手数料やスプレッドが発生する場合があります。</li></ul><h2>第4条（禁止事項）</h2><ul><li>法令や規制に違反する行為、公序良俗に反する行為。</li><li>他者になりすます行為、システムへの不正アクセスやリバースエンジニアリング。</li><li>マネーロンダリング、テロ資金供与など不正目的での利用。</li></ul><h2>第5条（免責）</h2><ul><li>ブロックチェーンの仕様変更、ネットワーク混雑、外部サービスの停止により生じる損害について当社は責任を負いません。</li><li>利用者端末の故障、セキュリティ設定不足、悪意あるソフトウェアに起因する損害についても同様とします。</li><li>当社は法令で求められる場合を除き、利用者間のトラブルに関与しません。</li></ul><h2>第6条（サービスの変更・停止）</h2><p>当社は、ネットワーク状況や法規制の変更、システムメンテナンス等により、本サービスの全部または一部を変更・中断・終了することがあります。 重要な変更がある場合は、アプリ内表示や公式サイト等で事前に告知します。</p><h2>第7条（準拠法・裁判管轄）</h2><p>本規約は日本法に準拠し、日本の裁判所を第一審の専属的合意管轄裁判所とします。</p></section></main><footer><small>© 2025 Clear Wallet</small></footer></body></html>
+</style></head><body><header><nav><div class="brand"><img src="/website/assets/clear-wallet-logo.svg" alt="Clear Wallet ロゴ"/><span>Clear Wallet</span></div><ul><li><a href="/website/">トップ</a></li><li><a href="/website/terms">利用規約</a></li><li><a href="/website/privacy">プライバシーポリシー</a></li></ul></nav></header><main><section class="surface"><div class="pill">Clear Wallet 利用規約</div><h1>Polygon 専用セルフカストディウォレットのご利用にあたって</h1><p>本規約は、Clear Wallet（以下「本サービス」）の提供条件および本サービス運営者（以下「運営」）と利用者の権利義務関係を定めるものです。 JPYC/USDC によるガス代支払い機能や AI 要約など、本サービス特有の機能をご利用いただく前に必ずお読みください。</p><h2>第1条（適用）</h2><p>本規約は、本サービスの利用に関する運営と利用者との間の一切の関係に適用されます。利用者は本規約に同意した上で本サービスを利用するものとします。</p><h2>第2条（セルフカストディと自己責任）</h2><ul><li>本サービスはセルフカストディ型であり、秘密鍵・復元フレーズは利用者が管理します。</li><li>秘密鍵の紛失・漏洩・第三者による不正利用について、運営は責任を負いません。</li><li>ウォレット操作やトランザクション承認の最終判断は利用者自身が行うものとします。</li></ul><h2>第3条（機能の利用）</h2><ul><li>送金、NFT 表示、WalletConnect、トランザクション AI 要約、ガス代の JPYC/USDC 支払いを提供します。</li><li>AI 要約は補助情報であり、正確性を保証するものではありません。必ず原文を確認してください。</li><li>ガス代の換算レートはネットワーク状況により変動し、手数料やスプレッドが発生する場合があります。</li></ul><h2>第4条（禁止事項）</h2><ul><li>法令や規制に違反する行為、公序良俗に反する行為。</li><li>他者になりすます行為、システムへの不正アクセスやリバースエンジニアリング。</li><li>マネーロンダリング、テロ資金供与など不正目的での利用。</li></ul><h2>第5条（免責）</h2><ul><li>ブロックチェーンの仕様変更、ネットワーク混雑、外部サービスの停止により生じる損害について運営は責任を負いません。</li><li>利用者端末の故障、セキュリティ設定不足、悪意あるソフトウェアに起因する損害についても同様とします。</li><li>運営は法令で求められる場合を除き、利用者間のトラブルに関与しません。</li></ul><h2>第6条（サービスの変更・停止）</h2><p>運営は、ネットワーク状況や法規制の変更、システムメンテナンス等により、本サービスの全部または一部を変更・中断・終了することがあります。 重要な変更がある場合は、アプリ内表示や公式サイト等で事前に告知します。</p><h2>第7条（準拠法・裁判管轄）</h2><p>本規約は日本法に準拠し、日本の裁判所を第一審の専属的合意管轄裁判所とします。</p></section></main><footer><small>© 2025 Clear Wallet</small></footer></body></html>

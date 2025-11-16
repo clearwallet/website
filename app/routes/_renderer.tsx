@@ -41,6 +41,7 @@ const baseStyles = `
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+    flex-wrap: nowrap;
   }
   nav .brand {
     font-weight: 800;
@@ -53,6 +54,7 @@ const baseStyles = `
     background: #ffffff;
     border: 1px solid var(--border);
     box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+    flex-shrink: 0;
   }
   nav .brand img {
     width: 32px;
@@ -67,6 +69,7 @@ const baseStyles = `
     gap: 12px;
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap;
   }
   nav a {
     text-decoration: none;
@@ -74,10 +77,26 @@ const baseStyles = `
     border-radius: 12px;
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     color: #0f172a;
+    white-space: nowrap;
   }
   nav a:hover, nav a:focus-visible {
     background: #e8ecf5;
     box-shadow: inset 0 0 0 1px var(--border);
+  }
+  @media (max-width: 640px) {
+    nav {
+      padding: 12px 16px;
+      gap: 8px;
+    }
+    nav ul {
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    nav a {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
   }
   main {
     max-width: 1040px;
