@@ -288,6 +288,15 @@ export default jsxRenderer(({ children, title, description }) => {
           name='google-site-verification'
           content='Jbq4LxESvET84V0kxiojK63ux1rqNW_IZ7xaoxfZJOo'
         />
+        {/* Google tag (gtag.js) */}
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-28PJ0KY0LB'></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-28PJ0KY0LB');`}
+        </script>
         <title>{pageTitle}</title>
         <meta name='description' content={metaDescription} />
         <style dangerouslySetInnerHTML={{ __html: baseStyles }} />
