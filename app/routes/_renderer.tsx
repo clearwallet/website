@@ -284,6 +284,10 @@ export default jsxRenderer(({ children, title, description }) => {
       <head>
         <meta charSet='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta
+          name='google-site-verification'
+          content='Jbq4LxESvET84V0kxiojK63ux1rqNW_IZ7xaoxfZJOo'
+        />
         <title>{pageTitle}</title>
         <meta name='description' content={metaDescription} />
         <style dangerouslySetInnerHTML={{ __html: baseStyles }} />
