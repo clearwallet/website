@@ -1,0 +1,254 @@
+import { jsxRenderer } from 'hono/jsx-renderer'
+
+const baseStyles = `
+  :root {
+    color-scheme: light;
+    font-family: 'Inter', 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f6f7fb;
+    color: #0f172a;
+    --surface: #ffffff;
+    --muted: #475467;
+    --border: #e4e7ec;
+    --primary: #4f46e5;
+    --primary-soft: #eef2ff;
+    --accent: linear-gradient(120deg, #4f46e5, #7c3aed);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(79, 70, 229, 0.08), transparent 28%),
+      radial-gradient(circle at 82% 8%, rgba(14, 165, 233, 0.12), transparent 26%),
+      linear-gradient(180deg, #f8fafc 0%, #f6f7fb 48%, #eef2ff 100%);
+  }
+  a { color: inherit; }
+  header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(248, 250, 252, 0.9);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+  }
+  nav {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  nav .brand {
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+  }
+  nav .brand span[aria-hidden='true'] {
+    font-size: 18px;
+    filter: drop-shadow(0 6px 12px rgba(124, 58, 237, 0.35));
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 12px;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    color: #0f172a;
+  }
+  nav a:hover, nav a:focus-visible {
+    background: #e8ecf5;
+    box-shadow: inset 0 0 0 1px var(--border);
+  }
+  main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    display: grid;
+    gap: 20px;
+  }
+  h1 {
+    margin: 0 0 12px;
+    font-size: clamp(30px, 5vw, 40px);
+  }
+  h2 {
+    margin-top: 32px;
+    margin-bottom: 14px;
+    font-size: 22px;
+    color: #1f2937;
+  }
+  p {
+    margin: 0 0 14px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  ul {
+    margin: 0 0 18px 20px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding: 0;
+  }
+  li + li {
+    margin-top: 9px;
+  }
+  .surface {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: clamp(22px, 3vw, 28px);
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+  }
+  .hero {
+    display: grid;
+    gap: 18px;
+    background: radial-gradient(circle at 8% 0%, rgba(79, 70, 229, 0.16), transparent 32%),
+      radial-gradient(circle at 92% 18%, rgba(8, 47, 73, 0.12), transparent 28%),
+      var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: clamp(26px, 4vw, 34px);
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+    pointer-events: none;
+  }
+  .hero h1 {
+    margin: 0;
+  }
+  .hero .lead {
+    max-width: 680px;
+    font-size: 16px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: #312e81;
+    border: 1px solid rgba(79, 70, 229, 0.16);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    width: fit-content;
+  }
+  .pill strong { color: #1f2937; }
+  .muted { color: var(--muted); }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    box-shadow: 0 16px 40px rgba(79, 70, 229, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  }
+  .button.secondary {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: var(--border);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  }
+  .button:hover, .button:focus-visible {
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .stat {
+    padding: 18px 18px 16px;
+    border-radius: 14px;
+    border: 1px dashed var(--border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  }
+  .stat dt { color: #1f2937; font-weight: 700; margin-bottom: 4px; }
+  .stat dd {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer {
+    text-align: center;
+    padding: 36px 24px 44px;
+    color: #667085;
+  }
+`
+
+export default jsxRenderer(({ children, title, description }) => {
+  const pageTitle = title ? `${title} | Honox App` : 'Honox App'
+  const metaDescription = description ?? 'Minimal multi-page site built with HonoX.'
+
+  return (
+    <html lang='ja'>
+      <head>
+        <meta charSet='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>{pageTitle}</title>
+        <meta name='description' content={metaDescription} />
+        <style dangerouslySetInnerHTML={{ __html: baseStyles }} />
+      </head>
+      <body>
+        <header>
+          <nav>
+            <div class='brand'>
+              <span aria-hidden='true'>✨</span>
+              <span>Honox App</span>
+            </div>
+            <ul>
+              <li>
+                <a href='/'>トップ</a>
+              </li>
+              <li>
+                <a href='/terms'>利用規約</a>
+              </li>
+              <li>
+                <a href='/privacy'>プライバシーポリシー</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <footer>
+          <small>© {new Date().getFullYear()} Honox App</small>
+        </footer>
+      </body>
+    </html>
+  )
+})
