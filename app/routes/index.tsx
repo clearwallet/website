@@ -6,6 +6,13 @@ export default createRoute((c) => {
   return c.render(
     <>
       <section class='hero'>
+        <div class='brand-card'>
+          <img src={withBasePath('/assets/clear-wallet-logo.svg')} alt='Clear Wallet ロゴ' />
+          <div>
+            <p class='eyebrow'>Polygon Beginners Welcome</p>
+            <p class='muted'>日本円ステーブルでガス代が払える、透明なセルフカストディ体験。</p>
+          </div>
+        </div>
         <div class='pill'>Polygon 専用セルフカストディ</div>
         <h1>Clear Wallet — JPYC でガス代を払える、初心者のための透明なウォレット</h1>
         <p class='lead'>
@@ -48,10 +55,10 @@ export default createRoute((c) => {
         </p>
       </section>
     </>,
-      {
-        title: 'Clear Wallet | Polygon初心者向けセルフカストディウォレット',
-        description:
-          'JPYCでガス代を支払えるPolygon特化ウォレット。送金・NFT表示・WalletConnect・AI要約を備え、初心者でも安心して使えます。',
-      }
+    {
+      title: 'Clear Wallet | Polygon初心者向けセルフカストディウォレット',
+      description:
+        'JPYCでガス代を支払えるPolygon特化ウォレット。送金・NFT表示・WalletConnect・AI要約を備え、初心者でも安心して使えます。',
+    }
   )
 })

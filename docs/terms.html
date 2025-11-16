@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja"><head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Clear Wallet 利用規約 | Honox App</title><meta name="description" content="JPYCでガス代を支払えるPolygon専用セルフカストディウォレットの利用条件。"/><style>
+<!DOCTYPE html><html lang="ja"><head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Clear Wallet 利用規約 | Clear Wallet</title><meta name="description" content="JPYCでガス代を支払えるPolygon専用セルフカストディウォレットの利用条件。"/><style>
   :root {
     color-scheme: light;
     font-family: 'Inter', 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -44,15 +44,18 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 10px;
-    border-radius: 12px;
+    padding: 8px 12px 8px 10px;
+    border-radius: 14px;
     background: #ffffff;
     border: 1px solid var(--border);
     box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
   }
-  nav .brand span[aria-hidden='true'] {
-    font-size: 18px;
-    filter: drop-shadow(0 6px 12px rgba(124, 58, 237, 0.35));
+  nav .brand img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(79, 70, 229, 0.12);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
   }
   nav ul {
     list-style: none;
@@ -122,6 +125,33 @@
     box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
     overflow: hidden;
     position: relative;
+  }
+  .brand-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px 10px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(6px);
+    width: fit-content;
+  }
+  .brand-card img {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid rgba(79, 70, 229, 0.14);
+    background: #a3e4d6;
+  }
+  .brand-card .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #312e81;
+    margin: 0 0 4px;
+    font-weight: 800;
   }
   .hero::after {
     content: '';
@@ -207,4 +237,4 @@
     padding: 36px 24px 44px;
     color: #667085;
   }
-</style></head><body><header><nav><div class="brand"><span aria-hidden="true">✨</span><span>Honox App</span></div><ul><li><a href="/website/">トップ</a></li><li><a href="/website/terms">利用規約</a></li><li><a href="/website/privacy">プライバシーポリシー</a></li></ul></nav></header><main><section class="surface"><div class="pill">Clear Wallet 利用規約</div><h1>Polygon 専用セルフカストディウォレットのご利用にあたって</h1><p>本規約は、Clear Wallet（以下「本サービス」）の提供条件および当社と利用者の権利義務関係を定めるものです。 JPYC/USDC によるガス代支払い機能や AI 要約など、本サービス特有の機能をご利用いただく前に必ずお読みください。</p><h2>第1条（適用）</h2><p>本規約は、本サービスの利用に関する当社と利用者との間の一切の関係に適用されます。利用者は本規約に同意した上で本サービスを利用するものとします。</p><h2>第2条（セルフカストディと自己責任）</h2><ul><li>本サービスはセルフカストディ型であり、秘密鍵・復元フレーズは利用者が管理します。</li><li>秘密鍵の紛失・漏洩・第三者による不正利用について、当社は責任を負いません。</li><li>ウォレット操作やトランザクション承認の最終判断は利用者自身が行うものとします。</li></ul><h2>第3条（機能の利用）</h2><ul><li>送金、NFT 表示、WalletConnect、トランザクション AI 要約、ガス代の JPYC/USDC 支払いを提供します。</li><li>AI 要約は補助情報であり、正確性を保証するものではありません。必ず原文を確認してください。</li><li>ガス代の換算レートはネットワーク状況により変動し、手数料やスプレッドが発生する場合があります。</li></ul><h2>第4条（禁止事項）</h2><ul><li>法令や規制に違反する行為、公序良俗に反する行為。</li><li>他者になりすます行為、システムへの不正アクセスやリバースエンジニアリング。</li><li>マネーロンダリング、テロ資金供与など不正目的での利用。</li></ul><h2>第5条（免責）</h2><ul><li>ブロックチェーンの仕様変更、ネットワーク混雑、外部サービスの停止により生じる損害について当社は責任を負いません。</li><li>利用者端末の故障、セキュリティ設定不足、悪意あるソフトウェアに起因する損害についても同様とします。</li><li>当社は法令で求められる場合を除き、利用者間のトラブルに関与しません。</li></ul><h2>第6条（サービスの変更・停止）</h2><p>当社は、ネットワーク状況や法規制の変更、システムメンテナンス等により、本サービスの全部または一部を変更・中断・終了することがあります。 重要な変更がある場合は、アプリ内表示や公式サイト等で事前に告知します。</p><h2>第7条（準拠法・裁判管轄）</h2><p>本規約は日本法に準拠し、日本の裁判所を第一審の専属的合意管轄裁判所とします。</p></section></main><footer><small>© 2025 Honox App</small></footer></body></html>
+</style></head><body><header><nav><div class="brand"><img src="/website/assets/clear-wallet-logo.svg" alt="Clear Wallet ロゴ"/><span>Clear Wallet</span></div><ul><li><a href="/website/">トップ</a></li><li><a href="/website/terms">利用規約</a></li><li><a href="/website/privacy">プライバシーポリシー</a></li></ul></nav></header><main><section class="surface"><div class="pill">Clear Wallet 利用規約</div><h1>Polygon 専用セルフカストディウォレットのご利用にあたって</h1><p>本規約は、Clear Wallet（以下「本サービス」）の提供条件および当社と利用者の権利義務関係を定めるものです。 JPYC/USDC によるガス代支払い機能や AI 要約など、本サービス特有の機能をご利用いただく前に必ずお読みください。</p><h2>第1条（適用）</h2><p>本規約は、本サービスの利用に関する当社と利用者との間の一切の関係に適用されます。利用者は本規約に同意した上で本サービスを利用するものとします。</p><h2>第2条（セルフカストディと自己責任）</h2><ul><li>本サービスはセルフカストディ型であり、秘密鍵・復元フレーズは利用者が管理します。</li><li>秘密鍵の紛失・漏洩・第三者による不正利用について、当社は責任を負いません。</li><li>ウォレット操作やトランザクション承認の最終判断は利用者自身が行うものとします。</li></ul><h2>第3条（機能の利用）</h2><ul><li>送金、NFT 表示、WalletConnect、トランザクション AI 要約、ガス代の JPYC/USDC 支払いを提供します。</li><li>AI 要約は補助情報であり、正確性を保証するものではありません。必ず原文を確認してください。</li><li>ガス代の換算レートはネットワーク状況により変動し、手数料やスプレッドが発生する場合があります。</li></ul><h2>第4条（禁止事項）</h2><ul><li>法令や規制に違反する行為、公序良俗に反する行為。</li><li>他者になりすます行為、システムへの不正アクセスやリバースエンジニアリング。</li><li>マネーロンダリング、テロ資金供与など不正目的での利用。</li></ul><h2>第5条（免責）</h2><ul><li>ブロックチェーンの仕様変更、ネットワーク混雑、外部サービスの停止により生じる損害について当社は責任を負いません。</li><li>利用者端末の故障、セキュリティ設定不足、悪意あるソフトウェアに起因する損害についても同様とします。</li><li>当社は法令で求められる場合を除き、利用者間のトラブルに関与しません。</li></ul><h2>第6条（サービスの変更・停止）</h2><p>当社は、ネットワーク状況や法規制の変更、システムメンテナンス等により、本サービスの全部または一部を変更・中断・終了することがあります。 重要な変更がある場合は、アプリ内表示や公式サイト等で事前に告知します。</p><h2>第7条（準拠法・裁判管轄）</h2><p>本規約は日本法に準拠し、日本の裁判所を第一審の専属的合意管轄裁判所とします。</p></section></main><footer><small>© 2025 Clear Wallet</small></footer></body></html>
