@@ -8,8 +8,8 @@ const points = [
 
 export default createRoute((c) => {
   return c.render(
-    <div class='card'>
-      <div class='badge'>利用規約</div>
+    <section class='surface'>
+      <div class='pill'>利用規約</div>
       <h1>ご利用前にお読みください</h1>
       <p>
         このページは雛形として用意されています。実際の提供条件に合わせて文面を調整してください。
@@ -20,11 +20,11 @@ export default createRoute((c) => {
           <li>{item}</li>
         ))}
       </ul>
-      <p>
+      <p class='muted'>
         また、ユーザー間で生じたトラブルや損害について、運営者は責任を負わないことがあります。
         詳細な免責事項や準拠法なども必要に応じて追加してください。
       </p>
-    </div>,
+    </section>,
     { title: '利用規約', description: 'サービス利用に関する基本的な条件をまとめたページです。' }
   )
 })

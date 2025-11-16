@@ -2,8 +2,8 @@ import { createRoute } from 'honox/factory'
 
 export default createRoute((c) => {
   return c.render(
-    <div class='card'>
-      <div class='badge'>プライバシー</div>
+    <section class='surface'>
+      <div class='pill'>プライバシー</div>
       <h1>個人情報の取り扱いについて</h1>
       <p>
         当サイトでは、お問い合わせやアカウント作成時にご提供いただく情報を、
@@ -20,11 +20,11 @@ export default createRoute((c) => {
         業務委託先に提供する場合は、適切な管理監督を行います。
       </p>
       <h2>お問い合わせ</h2>
-      <p>
+      <p class='muted'>
         取り扱いに関するご質問や開示請求は、運営者連絡先までお知らせください。
         実際の運用に合わせて連絡窓口を明示してください。
       </p>
-    </div>,
+    </section>,
     {
       title: 'プライバシーポリシー',
       description: '個人情報の利用目的や第三者提供に関する基本方針を示しています。',
