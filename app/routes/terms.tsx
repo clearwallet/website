@@ -6,7 +6,7 @@ export default createRoute((c) => {
   return c.render(
     <section class='surface'>
       <div class='pill'>Clear Wallet 利用規約</div>
-      <h1>Polygon 専用セルフカストディウォレットのご利用にあたって</h1>
+      <h1>Clear Walletのご利用にあたって</h1>
       <p>
         本規約は、Clear Wallet（以下「本サービス」）の提供条件および本サービス運営者（以下「運営」）と利用者の権利義務関係を定めるものです。
         JPYC/USDC によるガス代支払い機能や AI 要約など、本サービス特有の機能をご利用いただく前に必ずお読みください。
@@ -59,7 +59,7 @@ export default createRoute((c) => {
       <hr />
 
       <div class='pill'>Terms of Service /en</div>
-      <h1>Using Clear Wallet — Polygon Self-Custody Wallet</h1>
+      <h1>Using Clear Wallet — Self-Custody Wallet</h1>
       <p>
         These Terms set forth the conditions for using Clear Wallet ("the Service") and define the rights and obligations
         between users and the operator ("we"). Please review them before using features such as AI summaries and gas fee
@@ -117,14 +117,14 @@ export default createRoute((c) => {
     </section>,
     {
       title: 'Clear Wallet 利用規約',
-      description: 'JPYCでガス代を支払えるPolygon専用セルフカストディウォレットの利用条件。',
+      description: 'JPYCでガス代を支払えるセルフカストディウォレットの利用条件。',
       canonical: c.req.path,
       keywords: ['Clear Wallet', '利用規約', 'Polygon', 'JPYC', 'USDC', 'セルフカストディ'],
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         name: 'Clear Wallet 利用規約',
-        description: 'JPYCでガス代を支払えるPolygon専用セルフカストディウォレットの利用条件。',
+        description: 'JPYCでガス代を支払えるセルフカストディウォレットの利用条件。',
         url: withBasePath(c.req.path),
       },
     }
